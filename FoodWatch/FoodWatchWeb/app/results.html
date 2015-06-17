@@ -1,0 +1,115 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+            <a href="#">
+                <img src="Content/foodwatch_logo_200.png" alt="Food Watch logo" class="img-responsive" />
+            </a>
+        </div>
+        <div class="col-md-6">
+            <h3>Search for Recalled Food</h3>
+            <p>Enter a food item, food vendor, and/or the state and then click <strong>Search</strong>. Refine your search even more by populating all three search fields.</p>
+
+            <ul>
+                <li>Try food items like <em>chicken, ice cream, milk, etc</em>.</li>
+                <li>Try food vendors/brands such as <em>Perdue, Ben & Jerry’s, Hood, etc</em>.</li>
+                <li>Search the state you live in (e.g. <em>Massachusetts</em>) to find out if a recall affects you.</li>
+            </ul>
+
+            <p>Click the <strong>Recent</strong> button to see the recalls that have taken place in the past two months.</p>
+            
+
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+            <div class="btn-group">
+                <label class="btn btn-default" data-bind="css: {'active': resultsType() === 'recent'}">
+                    <input type="radio" name="displayMode" id="option1" data-bind="checked: resultsType, checkedValue: 'recent'"> Recent
+                </label>
+                <label class="btn btn-default" data-bind="css: {'active': resultsType() === 'search'}">
+                    <input type="radio" name="displayMode" id="option2" autocomplete="off" data-bind="checked: resultsType, checkedValue: 'search'"> Search
+                </label>
+
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row" data-bind="if: resultsType() === 'search'">
+        <div class="col-md-10 col-md-offset-1">
+            <form class="form-inline" data-bind="submit: search">
+                <div class="form-group">
+                    <label for="inputFood">Food:</label>
+                    <input type="text" class="form-control" id="inputFood" placeholder="Ice Cream" data-bind="textInput: searchFood">
+                </div>
+                <div class="form-group">
+                    <label for="inputVendor">Vendor:</label>
+                    <input type="text" class="form-control" id="inputVendor" placeholder="Dave's Ice Cream" data-bind="textInput: searchVendor">
+                </div>
+                <div class="form-group">
+                    <label for="inputVendor">State:</label>
+                    <select class="form-control" data-bind="options: states,
+                       value: searchState,
+                       optionsCaption: 'Choose...'"></select>
+
+                </div>
+                <button type="button" class="btn btn-default" data-bind="click: clearFields">Clear</button>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <h4 class="text-center">Results Distribution</h4>
+            <div id="regions_div"></div>
+        </div>
+        <div class="col-md-2">
+            <h4 class="text-center">Totals</h4>
+            <ul data-bind="foreach: resultsSummary">
+                <li><strong data-bind="text: term"></strong>: <span data-bind="text: count"></span></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <p>Showing <span data-bind="text: startPossition"></span>-<span data-bind="text: skip()+limit()>total()? total(): skip()+limit()"></span> of <span data-bind="text: total"></span>.</p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Description</th>
+                    <th>Status</th>
+                    <th>Initiated</th>
+                    <th>
+                        <a href="#" id="classificationHelp" data-toggle="tooltip" title="Class I = Dangerous or defective products that predictably could cause serious health problems or death.
+Class II = Products that might cause a temporary health problem, or pose only a slight threat of a serious nature.
+Class III = Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. " data-bind="click: function() {return false;}">Classification</a>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: results">
+                <tr>
+                    <td><span class="expander" data-bind="text: product_description"></span></td>
+                    <td data-bind="text: status"></td>
+                    <td data-bind="text: initiation_date_pretty || report_date"></td>
+                    <td data-bind="text: classification, css: { danger: classification === 'Class I', success: classification === 'Class III', warning: classification  === 'Class II'  }"></td>
+                    <td><a class="btn btn-default" href="#" role="button" data-bind=" attr: {href: '#details/' + event_id}">Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li data-bind="css: {disabled: skip() === 0}" class="disabled"><a href="#" data-bind="click: previous">Previous</a></li>
+                <li data-bind="css: {disabled: skip()+limit()>total()}"><a href="#" data-bind="click: next">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+            <a href="#">
+                <img src="Content/foodwatch_logo_200.png" alt="Food Watch logo" class="img-responsive" />
+            </a>
+        </div>
+        <div class="col-md-6">
+            <h3>Recall Details</h3>
+            <p></p>
+        </div>
+    </div>
+    <hr />
+
+    <a href="#results">&lt; Back to Results</a>
+    <h3 data-bind="text: item().recalling_firm"></h3>
+
+    <blockquote>
+        <p data-bind="text: item().product_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+
+    <p>
+        <em data-bind="text: item().reason_for_recall">highlight</em>
+    </p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt>Status</dt>
+                <dd data-bind="text: item().status"></dd>
+                <dt>Event ID</dt>
+                <dd data-bind="text: item().event_id"></dd>
+                <dt>Distribution Pattern</dt>
+                <dd data-bind="text: item().distribution_pattern"></dd>
+                <dt>Product Quantity</dt>
+                <dd data-bind="text: item().product_quantity"></dd>
+                <dt>Recall Initiation Date</dt>
+                <dd data-bind="text: item().recall_initiation_date_pretty"></dd>
+                <dt>Report Date</dt>
+                <dd data-bind="text: item().report_date_pretty"></dd>
+                <dt>Voluntary/Mandated</dt>
+                <dd data-bind="text: item().voluntary_mandated"></dd>
+                <dt>Classification</dt>
+                <dd data-bind="text: item().classification"></dd>
+                <dt>Code Info</dt>
+                <dd data-bind="text: item().code_info"></dd>
+                <dt>Initial Firm Notification</dt>
+                <dd data-bind="text: item().initial_firm_notification"></dd>
+            </dl>
+
+        </div>
+        <div class="col-md-6">
+            <h4 class="text-center">Distribution Pattern</h4>
+            <div id="details_regions_div"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div style="width:100%; height: 450px" id="map-canvas"></div>
+        </div>
+    </div>
+    <a href="#results">&lt; Back to Results</a>
+</div>

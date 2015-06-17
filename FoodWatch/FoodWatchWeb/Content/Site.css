@@ -1,0 +1,104 @@
+﻿body{
+    background-color:#95B1CB ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+ /* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.shell{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+}
+.footer{
+    padding-top:20px;
+}
+
+.jumbotron{
+    background-color:#fff;
+}
+.splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+    color:#8ABB24;
+}
+
+.splash .container{
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.container{
+    background-color:#fff;
+    border-radius:20px;
+}
+
+.splash .message {
+    font-size: 5em;
+    line-height: 1.5em;
+    -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+    text-transform: uppercase;
+}
+
+.splash .fa-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 5em;
+    margin-top: 50px;
+}
+
+section {
+    margin: 0 20px;
+}
+
+.navbar-nav li.loader {
+    margin: 12px 6px 0 6px;
+    visibility: hidden;
+}
+
+.navbar-nav li.loader.active {
+    visibility: visible;
+}
+
+.pictureDetail {
+    max-width: 425px;
+}
+
+.form-group{
+    padding-left:10px;
+}
+
+#navtiles{
+    padding-bottom:50px;
+}
+#navtiles .panel {
+    background-color: #F0F0F0 ;
+    width:220px;
+    
+}
+#navtiles .panel-body{
+    padding: 10px 5px 20px 5px;    
+    text-align:center;
+    font-size:larger;
+    font-weight:bold;
+    
+}
+#navtiles a:hover{
+    text-decoration:none;
+}
+
+
+
+
+label.btn > input[type='radio']
+{
+    display: none;
+}
+
+

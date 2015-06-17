@@ -1,0 +1,25 @@
+{
+  "name": "food-watch",
+  "version": "1.0.0",
+  "description": "Food Watch",
+  "devDependencies": {
+    "amdefine": "^0.1.1",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-durandal": "^1.1.7",
+    "gulp-eslint": "^0.14.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.2.5",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1",
+    "should": "^7.0.1",
+    "vinyl-paths": "^1.0.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter list"
+  },
+  "author": "IPT Associates",
+  "license": "MIT"
+}

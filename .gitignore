@@ -1,0 +1,17 @@
+/* Visual Studio related */
+
+*.user
+*.suo
+*.intellisense.js
+PublishProfiles/
+
+
+/* .NET related */
+
+bin/
+obj/
+
+
+/* Node.js related */
+
+node_modules/

@@ -1,0 +1,25 @@
+{
+  "name": "knockout-delegatedEvents",
+  "version": "0.5.0",
+  "main": "build/knockout-delegatedEvents.min.js",
+  "ignore": [
+    "examples",
+    "ext",
+    "lib",
+    "spec",
+    "src",
+    "Gruntfile.js",
+    "package.json",
+    ".gitignore"
+  ],
+  "homepage": "https://github.com/rniemeyer/knockout-delegatedEvents",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.0",
+    "commit": "f7e326d9739736e334deccad1053aca304dcb332"
+  },
+  "_source": "git://github.com/rniemeyer/knockout-delegatedEvents.git",
+  "_target": "~0.5.0",
+  "_originalSource": "knockout-delegatedEvents"
+}
